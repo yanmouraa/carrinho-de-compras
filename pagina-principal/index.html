@@ -3,40 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../pagina-principal/style.css">
+    <title>Loja de Roupas</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="carrinho.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
     <header class="header">
         <h1 class="titulo">Loja de Roupas</h1>
-        <a href="../carrinho/carrinho.html" class="btn_carrinho"><i class="fa-solid fa-cart-shopping"></i></a>
+        <a href="#carrinho" class="btn_carrinho" aria-label="Ir para o carrinho"><i class="fa-solid fa-cart-shopping"></i></a>
     </header>
-    <div class="container">
-        <div class="Produto_1">
-            <img src="img/camiseta_azul.webp" alt="Camiseta Azul" id="camiseta-A">
-            <div class="info_card">
-                <h2>Camiseta Azul</h2>
-                <p>R$ 79,90</p>
-                <button class="btn_comprar">Adicionar ao carrinho</button>
+
+    <main class="container">
+        <section class="cards-grid" aria-label="Produtos da loja">
+            <article class="Produto_1">
+                <img src="img/camiseta_azul.webp" alt="Camiseta Azul" id="camiseta-A">
+                <div class="info_card">
+                    <h2>Camiseta Azul</h2>
+                    <p>R$ 79,90</p>
+                    <button class="btn_comprar" data-img="img/camiseta_azul.webp" data-nome="Camiseta Azul" data-preco="79.90">Adicionar ao carrinho</button>
+                </div>
+            </article>
+
+            <article class="Produto_2">
+                <img src="img/camiseta_vinho.webp" alt="Camiseta Vinho" id="camiseta-V">
+                <div class="info_card">
+                    <h2>Camiseta Vinho</h2>
+                    <p>R$ 59,90</p>
+                    <button class="btn_comprar" data-img="img/camiseta_vinho.webp" data-nome="Camiseta Vinho" data-preco="59.90">Adicionar ao carrinho</button>
+                </div>
+            </article>
+
+            <article class="Produto_3">
+                <img src="img/calça_jeans.webp" alt="Calça Jeans" id="calça-J">
+                <div class="info_card">
+                    <h2>Calça Jeans</h2>
+                    <p>R$ 99,90</p>
+                    <button class="btn_comprar" data-img="img/calça_jeans.webp" data-nome="Calça Jeans" data-preco="99.90">Adicionar ao carrinho</button>
+                </div>
+            </article>
+        </section>
+
+        <section class="container_carrinho" id="carrinho" aria-labelledby="titulo-carrinho">
+            <div class="carrinho_header">
+                <h2 id="titulo-carrinho">Seu carrinho</h2>
+                <p>Os itens adicionados aparecerão aqui.</p>
             </div>
-        </div>
-        <div class="Produto_2">
-            <img src="img/camiseta_vinho.webp" alt="Camiseta Vinho" id="camiseta-V">
-            <div class="info_card">
-                <h2>Camiseta Vinho</h2>
-                <p>R$ 59,90</p>
-                <button class="btn_comprar">Adicionar ao carrinho</button>
+            <div id="produtos-CC">
+                <p>Seu carrinho está vazio.</p>
             </div>
-        </div>
-        <div class="Produto_3">
-            <img src="img/calça_jeans.webp" alt="Calça Jeans" id="calça-J">
-            <div class="info_card">
-                <h2>Calça Jeans</h2>
-                <p>R$ 99,90</p>
-                <button class="btn_comprar">Adicionar ao carrinho</button>
+            <div id="total-CC">
+                <h3>Total: <span id="valor-total">R$ 0,00</span></h3>
             </div>
-        </div>
-    </div>
+        </section>
+    </main>
+
+    <script src="carrinho.js"></script>
 </body>
 </html>

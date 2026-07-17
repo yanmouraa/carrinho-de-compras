@@ -47,11 +47,20 @@ img {
 /*Container geral*/
 .container {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  padding: 2rem 1rem 3rem;
+  gap: 2rem;
+  min-height: calc(100vh - 72px);
+}
+
+.cards-grid {
+  display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 2rem;
+  width: 100%;
 }
 
 .Produto_1, .Produto_2, .Produto_3 {
@@ -59,7 +68,6 @@ img {
   flex-direction: column;
   width: 300px;
   padding: 1rem;
-  cursor: pointer;
   transition: all 0.3s;
   border-radius: 20px;
   border-color: #ccc;
