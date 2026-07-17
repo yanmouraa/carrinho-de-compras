@@ -26,6 +26,9 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
+        const totalCarrinho = carrinho.reduce((soma, item) => soma + item.preco, 0);
+        valorTotal.textContent = `R$ ${totalCarrinho.toFixed(2)}`;
+
         carrinho.forEach((item, index) => {
             const cardItem = document.createElement('div');
             cardItem.classList.add('card_item');
@@ -35,11 +38,23 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class = "infoProduto_Carrinho">
                     <h3>${item.nome}</h3>
                     <p>${item.preco}</p>
-                    <button class = "btn-delete">Delete</button>
+                    <button class = "btn_delete">Delete</button>
                 </div>
             `;
 
             listaCarrinho.appendChild(cardItem);
+        });
+        botaoDelete();
+    }
+
+    function botaoDelete() {
+        const btnDelete = document.querySelectorAll('.btn_delete');
+
+        btnDelete.forEach((botao, index) => {
+            botao.addEventListener('click', () => {
+                carrinho.splice(index, 1);
+                atualizarCarrinho();
+            });
         });
     }
 
